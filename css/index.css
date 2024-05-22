@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+header {
+  padding: 20px 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header ul li {
+  margin: 0 20px;
+  list-style: none;
+}
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+}
+header ul li a::after {
+  content: " ";
+  width: 0%;
+  position: absolute;
+  background-color: #EF476F;
+  height: 3px;
+  bottom: -5px;
+  left: -1px;
+  transition: 0.3s;
+}
+header ul li a:hover::after {
+  width: 105%;
+}
+header ul li button {
+  background-color: #EF476F;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+header ul li button:hover {
+  border: 2px solid #EF476F;
+  color: #EF476F;
+  background-color: #ffffff;
+}
+
+.img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -5;
+}
+
+.pannel {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  background-color: rgba(131, 56, 236, 0.5764705882);
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: 0 10%;
+}
+.hero .head {
+  font-size: 70px;
+  font-weight: 600;
+  padding: 20px 0;
+}
+.hero .text {
+  padding: 10px 0;
+  text-align: justify;
+}
+.hero .input-box {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  padding-left: 6%;
+}
+.hero .input-box .inputt {
+  height: 30px;
+  padding: 4px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+.hero .input-box button {
+  background-color: #EF476F;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.hero .input-box button:hover {
+  border: 2px solid #EF476F;
+  color: #EF476F;
+  background-color: #ffffff;
+}

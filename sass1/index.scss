@@ -1,0 +1,133 @@
+
+$text-c:#ffffff;
+$main:#EF476F;
+$main2:#8338ec93;
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+
+}
+@mixin flex-base{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+@mixin h-w{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+   top: 0;
+}
+@mixin btn{
+    background-color: $main;
+    color: $text-c;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover{
+        border: 2px solid $main;
+        color: $main;
+        background-color: #ffffff;
+    }
+    
+}
+
+body{
+    position: relative;
+    color: $text-c;
+    font-family: sans-serif;
+    
+}
+
+header{
+   
+    padding: 20px 70px;
+    @include flex-base();
+    justify-content: space-between;
+    ul{
+        @include flex-base();
+        li{
+            margin: 0 20px;
+            list-style: none;
+            
+           
+            a{
+                position: relative;
+                text-decoration: none;
+                color: $text-c;
+                &::after{
+                    content: ' ';
+                    width: 0%;
+                    position: absolute;
+                    background-color: $main;
+                    height: 3px;
+                    bottom: -5px;
+                    left: -1px;
+                    transition: 0.3s;
+    
+                }
+                &:hover::after{
+                    width: 105%
+                }
+            }
+            button{
+                
+                @include btn();
+                
+            }
+        }
+    }
+}
+
+.img{
+   @include h-w();
+   z-index: -5;
+   
+}
+.pannel{
+    @include h-w();
+    z-index: -2;
+    background-color: $main2;
+}
+.hero{
+    @include h-w();
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: 0 10%;
+    .head{
+        font-size: 70px;
+        font-weight: 600;padding: 20px 0;
+
+    }
+    .text{
+        padding: 10px 0;
+        text-align: justify;
+    }
+    .input-box{
+        background-color: $text-c;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        display: flex;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        padding-left: 6%;
+
+        .inputt{
+            height: 30px;
+            padding: 4px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            flex-grow: 1
+        }
+        button{
+            @include btn();
+        }
+    }
+}
